@@ -12,24 +12,27 @@ export function Accordion(props: AccordionPropsType){
         return(
             <div>
                 <AccordionTitle title={props.titleValue}/>
-                <AccordionBody/>
             </div>
         )
-    } else if (props.collapsed === false) {
+    } else {
         return(
             <div>
                 <AccordionTitle title={props.titleValue}/>
+                <AccordionBody/>
             </div>
         )
     }
-    return(
-        <div>
-            <AccordionTitle title={props.titleValue}/>
-            <AccordionBody/>
-        </div>
-    )
-
 }
+
+function Accordion1(props: AccordionPropsType){
+        return(
+            <div>
+                <AccordionTitle title={props.titleValue}/>
+                {!props.collapsed && <AccordionBody/>}
+            </div>
+        )
+    }
+
 
 type AccordionTitlePropsType = {
     title: string

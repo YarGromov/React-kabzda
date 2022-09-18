@@ -25,10 +25,11 @@ function App() {
         <OnOff/>
 
         <UncontrolledAccordion titleValue={"Menu"}/>
-        <Accordion titleValue={'Menu 2'} collapsed={false}/>
-
         <UncontrolledRating/>
-        <Rating value={3}/>
+
+
+        {/*<Accordion titleValue={'Menu 2'} collapsed={false}/>*/}
+        {/*<Rating value={3}/>*/}
 
 
     </div>

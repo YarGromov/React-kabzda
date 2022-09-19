@@ -5,6 +5,7 @@ import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
 
@@ -18,9 +19,9 @@ function App() {
     <div className="App">
 
 
-        <OnOff on={switchOn} onChange={setSwitchOn}/>
+        <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
-
+        {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
         {/*<Accordion titleValue={'Menu 2'}*/}
         {/*           collapsed={accordionCollapsed}*/}
         {/*           onChange={()=> {*/}

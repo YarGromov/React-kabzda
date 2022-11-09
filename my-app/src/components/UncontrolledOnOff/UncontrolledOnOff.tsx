@@ -37,14 +37,20 @@ export const UncontrolledOnOff = (props: OnOffPropsType) => {
         backgroundColor: on ? 'green' : 'red',
     }
 
+    const onClicked = ()=>{
+        setOn(true)
+        props.onChange(true)
+    }
+    const offClicked = ()=>{
+        setOn(false)
+        props.onChange(false)
+    }
+
+
     return (
         <div>
-            <div style={onStyle} onClick={()=>{setOn(true)
-            props.onChange(true)
-            }}>On</div>
-            <div style={offStyle} onClick={()=>{setOn(false)
-                props.onChange(false)
-            }}>Off</div>
+            <div style={onStyle} onClick={onClicked}>On</div>
+            <div style={offStyle} onClick={offClicked}>Off</div>
             <div style={indicatorStyle}></div>
         </div>
     );

@@ -6,6 +6,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {Counter} from "./components/Counter/Counter";
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
     <div className="App">
 
 
-        <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+        {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
 
         {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
         {/*<Accordion titleValue={'Menu 2'}*/}
@@ -32,7 +33,7 @@ function App() {
         {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
         {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
         {/*<UncontrolledRating/>*/}
-
+        <Counter/>
 
 
     </div>

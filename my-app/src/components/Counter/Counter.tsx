@@ -13,7 +13,11 @@ export const Counter = () => {
     }
 
     const getFromLocalStorageHandler = () => {
-
+        let valueAsString = localStorage.getItem('CounterValue');
+        if (valueAsString) {
+            let newValue = JSON.parse(valueAsString)
+            setValue(newValue)
+        }
     }
 
     return (

@@ -2,3 +2,7 @@
     width: 600px;
     margin: 20px auto;
 }
+
+.active {
+    font-size: 50px;
+}

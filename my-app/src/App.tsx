@@ -7,7 +7,7 @@ import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Uncontro
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {Counter} from "./components/Counter/Counter";
-import {NavLink, Routes, Route} from "react-router-dom";
+import {NavLink, Routes, Route, Outlet} from "react-router-dom";
 
 function App() {
 
@@ -21,14 +21,28 @@ function App() {
     <div className="App">
 
 
-        <NavLink to={'/'}>Main</NavLink>---
-        <NavLink to={'/login'}>Login</NavLink>---
-        <NavLink to={'/profile'}>Profile</NavLink>
+      <NavLink to={'/'}>main</NavLink>---
+      <NavLink to={'/login'}>login</NavLink>---
+      <NavLink to={'/frofile'}>frofile</NavLink>---
+      <NavLink to={'/frofile/settings'}>settings</NavLink>---
 
         <Routes>
-            <Route path={'/'} element={<div>Main</div>}/>
-            <Route path={'/login'} element={<div>Login</div>}/>
-            <Route path={'/profile'} element={<div>Profile</div>}/>
+            <Route path={'/*'} element={<div>404</div>}/>
+            <Route path={'/'} element={<div>main</div>}/>
+            <Route path={'/login'} element={<div>login</div>}/>
+            <Route path={'/frofile'}
+                   element={
+                       <div>
+                           frofile
+                            <Outlet/>
+                       </div>
+                   }>
+                <Route path={'*'} element={<div>propile page not found</div>}/>
+                <Route index element={<div>check id</div>}/>
+                <Route path={':id'} element={<div>id</div>}/>
+                <Route path={'/frofile/settings'} element={<div>settings</div>}/>
+            </Route>
+
         </Routes>
 
         {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}

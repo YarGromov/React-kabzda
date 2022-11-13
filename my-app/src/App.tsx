@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
@@ -7,7 +7,7 @@ import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Uncontro
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {Counter} from "./components/Counter/Counter";
-import {NavLink, Routes, Route, useParams} from "react-router-dom";
+import {NavLink, Routes, Route, useParams, useNavigate, Navigate} from "react-router-dom";
 
 function App() {
 
@@ -18,37 +18,30 @@ function App() {
     let [switchOn, setSwitchOn] = useState<boolean>(false)
 
     const Profile = () => {
-        const params = useParams<'*'>()
-        const some = params["*"];
-        console.log(some)
-        return <div>frofile</div>
+        const navigate = useNavigate();
+
+
+        return (
+            <div>
+                {/*{true && <Navigate to={'/'}/>}*/}
+                profile
+                <button onClick={()=>{navigate(-1)}}>logout</button>
+            </div>
+        )
     }
 
     return (
         <div className="App">
-
-
             <NavLink to={'/'}>main</NavLink>---
             <NavLink to={'/login'}>login</NavLink>---
-            <NavLink
-                to={'/frofile'}
-                style={(params)=> {
-                    return  { color: params.isActive ? 'lime' : 'black'}
-                }}
-            >frofile</NavLink>---
+            <NavLink to={'/frofile'}>frofile</NavLink>---
             <NavLink to={'/frofile/settings'}>settings</NavLink>---
-            <a href="https://www.udemy.com/course/javascript_full/learn/lecture/28490428#overview"
-               target={'_blank'}
-               rel={'noreferrer nofollow noopenner'}
-            >
-                ---xxx---
-            </a>
 
             <Routes>
                 <Route path={'/*'} element={<div>404</div>}/>
                 <Route path={'/'} element={<div>main</div>}/>
                 <Route path={'/login'} element={<div>login</div>}/>
-                <Route path={'/frofile'} element={<div>frofile</div>}/>
+                <Route path={'/frofile'} element={<Profile/>}/>
                 <Route path={'/frofile/settings'} element={<div>settings</div>}/>
             </Routes>
 

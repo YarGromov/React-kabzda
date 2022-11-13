@@ -7,6 +7,7 @@ import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Uncontro
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {Counter} from "./components/Counter/Counter";
+import {NavLink, Routes, Route} from "react-router-dom";
 
 function App() {
 
@@ -19,6 +20,16 @@ function App() {
   return (
     <div className="App">
 
+
+        <NavLink to={'/'}>Main</NavLink>---
+        <NavLink to={'/login'}>Login</NavLink>---
+        <NavLink to={'/profile'}>Profile</NavLink>
+
+        <Routes>
+            <Route path={'/'} element={<div>Main</div>}/>
+            <Route path={'/login'} element={<div>Login</div>}/>
+            <Route path={'/profile'} element={<div>Profile</div>}/>
+        </Routes>
 
         {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
 
@@ -33,7 +44,7 @@ function App() {
         {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
         {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
         {/*<UncontrolledRating/>*/}
-        <Counter/>
+        {/*<Counter/>*/}
 
 
     </div>

@@ -7,7 +7,7 @@ import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Uncontro
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {Counter} from "./components/Counter/Counter";
-import {NavLink, Routes, Route, Outlet} from "react-router-dom";
+import {NavLink, Routes, Route, useParams} from "react-router-dom";
 
 function App() {
 
@@ -17,6 +17,13 @@ function App() {
 
     let [switchOn, setSwitchOn] = useState<boolean>(false)
 
+   const Profile = () => {
+       const params = useParams<'*'>()
+       const some = params["*"];
+       console.log(some)
+       return <div>frofile</div>
+   }
+
   return (
     <div className="App">
 
@@ -24,25 +31,13 @@ function App() {
       <NavLink to={'/'}>main</NavLink>---
       <NavLink to={'/login'}>login</NavLink>---
       <NavLink to={'/frofile'}>frofile</NavLink>---
-      <NavLink to={'/frofile/settings'}>settings</NavLink>---
+      <NavLink to={'/frofile/1'}>frofile/1</NavLink>---
 
         <Routes>
             <Route path={'/*'} element={<div>404</div>}/>
             <Route path={'/'} element={<div>main</div>}/>
             <Route path={'/login'} element={<div>login</div>}/>
-            <Route path={'/frofile'}
-                   element={
-                       <div>
-                           frofile
-                            <Outlet/>
-                       </div>
-                   }>
-                <Route path={'*'} element={<div>propile page not found</div>}/>
-                <Route index element={<div>check id</div>}/>
-                <Route path={':id'} element={<div>id</div>}/>
-                <Route path={'/frofile/settings'} element={<div>settings</div>}/>
-            </Route>
-
+            <Route path={'/frofile/*'} element={<Profile/>} />
         </Routes>
 
         {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}

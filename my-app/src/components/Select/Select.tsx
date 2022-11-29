@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Select.module.css'
 
 type ItemType = {
@@ -13,7 +13,9 @@ type SelectPropsType = {
 }
 
 export function Select(props: SelectPropsType){
+    const [active, setActive] = useState(false)
     const selectedItem = props.items.find(i => i.value === props.value)
+    const showItems = () => setActive(!active)
     return(
         <>
             <select>
@@ -22,11 +24,15 @@ export function Select(props: SelectPropsType){
                 <option value="">Kiev</option>
             </select>
 
-            <div className={styles.select}>
-                <h3>{selectedItem && selectedItem.title}</h3>
-                <div className={styles.items}>
-                    {props.items.map(i=> <div key={i.value}>{i.title}</div>)}
-                </div>
+            <div className={styles.select + ' '}>
+                <h3 onClick={showItems}>{selectedItem && selectedItem.title}</h3>
+                {
+                    active &&
+                    <div className={styles.items}>
+                        {props.items.map(i=> <div key={i.value}>{i.title}</div>)}
+                    </div>
+                }
+
             </div>
         </>
 

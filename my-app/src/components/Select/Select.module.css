@@ -3,5 +3,8 @@
 }
 
 .items {
-
+    padding: 5px;
+    position: absolute;
+    border: 1px solid black;
 }
+

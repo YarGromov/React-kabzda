@@ -15,26 +15,30 @@ type SelectPropsType = {
 export function Select(props: SelectPropsType){
     const [active, setActive] = useState(false)
     const selectedItem = props.items.find(i => i.value === props.value)
-    const showItems = () => setActive(!active)
+    const toggleItems = () => setActive(!active)
+    const onItemClick = (value: any) => {
+        props.onChange(value);
+        toggleItems()
+    }
     return(
         <>
-            <select>
-                <option value="">Minsk</option>
-                <option value="">Moscow</option>
-                <option value="">Kiev</option>
-            </select>
-
             <div className={styles.select + ' '}>
-                <h3 onClick={showItems}>{selectedItem && selectedItem.title}</h3>
+                <span className={styles.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {
                     active &&
                     <div className={styles.items}>
-                        {props.items.map(i=> <div key={i.value}>{i.title}</div>)}
+                        {props.items.map(i=> <div
+                            className={styles.item + ' ' + (selectedItem === i ? styles.selected : '')}
+                            key={i.value}
+                            onClick={()=>{
+                                onItemClick(i.value)
+                            }}
+                        >{i.title}</div>)}
                     </div>
                 }
-
             </div>
         </>
-
     )
 }
+
+//30мин

@@ -64,7 +64,7 @@ function App() {
             {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
             {/*<UncontrolledRating/>*/}
             {/*<Counter/>*/}
-
+            <UncontrolledAccordion titleValue={'--Users--'}/>
 
         </div>
     );

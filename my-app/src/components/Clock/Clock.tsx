@@ -11,6 +11,7 @@ export const Clock: React.FC<PropsType> = () => {
     useEffect(() => {
       const intervalId =  setInterval(() => {
           console.log('TICK')
+
             setDate(new Date())
         }, 1000)
         return ()=>{

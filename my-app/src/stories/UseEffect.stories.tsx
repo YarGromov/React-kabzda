@@ -44,7 +44,7 @@ export const SetTimeoutExpample = () => {
         // },1000)
 
         setInterval(()=>{
-            console.log('Tick ' + counter)
+            // console.log('Tick ' + counter)
             setCounter(counter + 1)
         },1000)
 

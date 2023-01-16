@@ -25,24 +25,25 @@ export const ResetEffectExapmle = () => {
 
 export const KeysTrackerExapmle = () => {
     const [text, setText] = useState('')
+
     console.log('Component rendered: ' + text)
 
     useEffect(() => {
 
-        const handler = (e: KeyboardEvent)=>{
-            console.log(e.key)
-            setText((state)=> state + e.key)
-        }
+     const timeoutID = setTimeout(()=>{
+            console.log('TIMEOUT EXPIRED')
+            setText('3 seconds passed')
 
-        window.addEventListener("keypress", handler )
+        }, 3000)
+
 
         return ()=>{
-            window.removeEventListener('keypress',handler )
+        clearTimeout(timeoutID)
         }
-    }, [])
+    }, [text])
 
     return <>
-       Typed text: {text}
+        text: {text}
     </>
 }
 

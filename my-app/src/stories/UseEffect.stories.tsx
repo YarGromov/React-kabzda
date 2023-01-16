@@ -31,7 +31,7 @@ export const SimpleExpample = () => {
     </>
 }
 
-export const SetTimeoutExpample = () => {
+export const SetIntervalExpample = () => {
     const [fake, setFake] = useState(1)
     const [counter, setCounter] = useState(1)
     console.log('SetTimeoutExpample')
@@ -43,10 +43,14 @@ export const SetTimeoutExpample = () => {
         //     document.title = counter.toString()
         // },1000)
 
-        setInterval(()=>{
-            // console.log('Tick ' + counter)
+       const interval = setInterval(()=>{
+            console.log('Tick ' + counter)
             setCounter(counter + 1)
         },1000)
+
+        return ()=>{
+            clearInterval(interval)
+        }
 
     },[])
 

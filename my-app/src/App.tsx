@@ -8,6 +8,7 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {Counter} from "./components/Counter/Counter";
 import {NavLink, Routes, Route, useParams, useNavigate, Navigate, useSearchParams} from "react-router-dom";
+import {Promises} from "./components/Promises/Promises";
 
 function App() {
 
@@ -64,8 +65,8 @@ function App() {
             {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
             {/*<UncontrolledRating/>*/}
             {/*<Counter/>*/}
-            <UncontrolledAccordion titleValue={'--Users--'}/>
-
+            {/*<UncontrolledAccordion titleValue={'--Users--'}/>*/}
+            <Promises/>
         </div>
     );
 }

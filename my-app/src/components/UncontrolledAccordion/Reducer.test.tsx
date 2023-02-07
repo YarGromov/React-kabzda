@@ -9,11 +9,10 @@ test('collapsed should be true', ()=>{
     const newState = reducer(state, {type: TOGGLE_COLLAPSED})
 
 
-
     expect(newState.collapsed).toBe(true)
 })
 
-test('еру function should return an error', ()=>{
+test('function should return an error', ()=>{
 
     const state: StateType = {
         collapsed: false

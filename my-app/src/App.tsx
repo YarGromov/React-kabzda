@@ -9,6 +9,7 @@ import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOf
 import {Counter} from "./components/Counter/Counter";
 import {NavLink, Routes, Route, useParams, useNavigate, Navigate, useSearchParams} from "react-router-dom";
 import {Promises} from "./components/Promises/Promises";
+import {Test} from "./components/Test/Test";
 
 function App() {
 
@@ -66,7 +67,8 @@ function App() {
             {/*<UncontrolledRating/>*/}
             {/*<Counter/>*/}
             {/*<UncontrolledAccordion titleValue={'--Users--'}/>*/}
-            <Promises/>
+            {/*<Promises/>*/}
+            <Test/>
         </div>
     );
 }

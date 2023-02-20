@@ -6,7 +6,7 @@ function createUser(name: string, surname: string){
     return user
 }
 
-export const Test = () => {
+export const TestUseMemo = () => {
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
     const [counter, setCounter] = useState(0)

@@ -9,7 +9,8 @@ import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOf
 import {Counter} from "./components/Counter/Counter";
 import {NavLink, Routes, Route, useParams, useNavigate, Navigate, useSearchParams} from "react-router-dom";
 import {Promises} from "./components/Promises/Promises";
-import {Test} from "./components/Test/Test";
+import {TestUseMemo} from "./components/Test/TestUseMemo";
+import {TestUseCallback} from "./components/Test/TestUseCallback";
 
 function App() {
 
@@ -68,7 +69,7 @@ function App() {
             {/*<Counter/>*/}
             {/*<UncontrolledAccordion titleValue={'--Users--'}/>*/}
             {/*<Promises/>*/}
-            <Test/>
+            <TestUseCallback/>
         </div>
     );
 }

@@ -96,7 +96,7 @@ export const KeysTackerExample = () => {
 
         const handler = (e:  KeyboardEvent)=>{
             console.log(e.key);
-            setText((state)=> state + e.key)
+            setText(text + e.key)
         }
 
        window.addEventListener('keypress', handler)
@@ -105,7 +105,7 @@ export const KeysTackerExample = () => {
         return () => {
             window.removeEventListener('keypress', handler)
         }
-    },[])
+    },[text])
 
 
     return <>

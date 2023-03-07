@@ -23,7 +23,7 @@ export const ResetEffectExapmle = () => {
     </>
 }
 
-export const KeysTrackerExapmle = () => {
+export const KeysTrackerExample = () => {
     const [text, setText] = useState('')
 
     console.log('Component rendered: ' + text)

@@ -1,16 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
-import {Counter} from "./components/Counter/Counter";
 import {NavLink, Routes, Route, useParams, useNavigate, Navigate, useSearchParams} from "react-router-dom";
-import {Promises} from "./components/Promises/Promises";
 import {TestUseMemo} from "./components/Test/TestUseMemo";
 import {TestUseCallback} from "./components/Test/TestUseCallback";
+import {TestUseEffect} from "./components/Test/TestUseEffect";
 
 function App() {
 
@@ -40,36 +34,7 @@ function App() {
 
     return (
         <div className="App">
-            {/*<NavLink to={'/'}>main</NavLink>---*/}
-            {/*<NavLink to={'/login'}>login</NavLink>---*/}
-            {/*<NavLink to={'/frofile'}>frofile</NavLink>---*/}
-            {/*<NavLink to={'/frofile/settings'}>settings</NavLink>---*/}
-
-            {/*<Routes>*/}
-            {/*    <Route path={'/*'} element={<div>404</div>}/>*/}
-            {/*    <Route path={'/'} element={<div>main</div>}/>*/}
-            {/*    <Route path={'/login'} element={<div>login</div>}/>*/}
-            {/*    <Route path={'/frofile'} element={<Profile/>}/>*/}
-            {/*    <Route path={'/frofile/settings'} element={<div>settings</div>}/>*/}
-            {/*</Routes>*/}
-
-            {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
-
-            {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
-            {/*<Accordion titleValue={'Menu 2'}*/}
-            {/*           collapsed={accordionCollapsed}*/}
-            {/*           onChange={()=> {*/}
-            {/*               setAccordionCollapsed(!accordionCollapsed)*/}
-            {/*           }}*/}
-            {/*/>*/}
-
-            {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
-            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
-            {/*<UncontrolledRating/>*/}
-            {/*<Counter/>*/}
-            {/*<UncontrolledAccordion titleValue={'--Users--'}/>*/}
-            {/*<Promises/>*/}
-            <TestUseCallback/>
+            <TestUseEffect/>
         </div>
     );
 }

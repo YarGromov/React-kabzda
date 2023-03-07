@@ -14,7 +14,10 @@ export const TestUseCallback = () => {
         console.log(text)
     }, [])
 
+
+
     useEffect(()=>{
+
         greeting(message)
     }, [greeting, message])
 
